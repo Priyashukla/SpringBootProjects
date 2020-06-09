@@ -1,0 +1,19 @@
+Step 1: Create Database and make table of product using mysql workbench
+{note- set id not null and autoincrement}
+CREATE TABLE `product` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) NOT NULL,
+  `brand` varchar(45) NOT NULL,
+  `madein` varchar(45) NOT NULL,
+  `price` float NOT NULL,
+  PRIMARY KEY (`id`)
+)
+
+step 2:create spring project in STS and add compulsary jar files of spring web,JPA,ThymeLeaf,mysql.
+step 3:set application.properties file with your username and password of mysql.
+step 4:create entity class of product.
+step 5:create product repository interface with @Repository annotation and extend jparepository
+step 6:create product service class with @Service annotation
+step 7:create controller class
+step 8:create html pages like index.html,new_product.html and edit_product.html
+note:{We use ThymeLeaf instead of JSP, so create the templates directory under src/main/resources to store template files (HTML)}

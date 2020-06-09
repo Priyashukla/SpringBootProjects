@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Product Manager</title>
+</head>
+<body>
+   <div align="center">
+   <h1>Product Manager</h1>
+   <a href="new">Create new Product</a>
+   <br>
+   <table border="1">
+   <thead>
+   <tr>
+   <th>Product Id</th>
+   <th>Name</th>
+   <th>Brand</th>
+   <th>Made In</th>
+   <th>Price</th>
+   <th>Actions</th>
+   </tr>
+   </thead>
+   <tbody>
+   <!-- to iterate over collections of different object types | all syntax are from thymleaf -->
+     <tr th:each="pro : ${listProducts}">
+     <td th:text="${pro.id}">Product Id</td>
+     <td th:text="${pro.name}">Name</td>
+     <td th:text="${pro.brand}">Brand</td>
+     <td th:text="${pro.madein}">Made in</td>
+     <td th:text="${pro.price}">Price</td>
+     <td>
+     <a th:href="@{'/edit/'+${pro.id}}">Edit</a><!-- hyperlink that allows the users to edit a product -->
+     &nbsp;&nbsp;&nbsp;&nbsp;<!-- non-breaking space -->
+     <a th:href="@{'/delete/'+${pro.id}}">Delete</a>
+     </td>
+     </tr>
+   </tbody>
+   </table>
+   </div>
+</body>
+</html>
